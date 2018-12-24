@@ -1,5 +1,7 @@
 <?php
 /**
+ * @package     Telegram
+ * @link        https://github.com/MohsenJS/BotMethod
  * @author MohsenJS
  */
 class BotMethod
