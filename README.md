@@ -1,7 +1,7 @@
 BotMethod _(Telegram Bot Method)_
 =================
 
-## BotMethod help you to easily use "_Telegram API v4.1_"
+## BotMethod help you to easily use "_Telegram Bot API v4.2_"
 
 
 **A Class of all Telegram Bot Methods for PHP**
@@ -32,6 +32,7 @@ Method Name | Description
 [stopMessageLiveLocation](https://core.telegram.org/bots/api#stopmessagelivelocation) | Use this method to stop updating a live location message sent by the bot or via the bot (for inline bots) before live_period expires.
 [sendVenue](https://core.telegram.org/bots/api#sendvenue) | Use this method to send information about a venue
 [sendContact](https://core.telegram.org/bots/api#sendcontact) | Use this method to send phone contacts
+[sendPoll](https://core.telegram.org/bots/api#sendPoll) | Use this method to send a native poll. A native poll can't be sent to a private chat
 [sendChatAction](https://core.telegram.org/bots/api#sendchataction) | Use this method when you need to tell the user that something is happening on the bot's side.
 [getUserProfilePhotos](https://core.telegram.org/bots/api#getuserprofilephotos) | Use this method to get a list of profile pictures for a user
 [getFile](https://core.telegram.org/bots/api#getfile) | Use this method to get basic info about a file and prepare it for downloading. For the moment, bots can download files of up to 20MB in size
@@ -60,6 +61,7 @@ getFileLink | Use this method to get File link
 [editMessageCaption](https://core.telegram.org/bots/api#editmessagecaption) | Use this method to edit captions of messages sent by the bot or via the bot (for inline bots)
 [editMessageMedia](https://core.telegram.org/bots/api#editMessageMedia) | Use this method to edit audio, document, photo, or video messages
 [editMessageReplyMarkup](https://core.telegram.org/bots/api#editmessagereplymarkup) | Use this method to edit only the reply markup of messages sent by the bot or via the bot (for inline bots)
+[stopPoll](https://core.telegram.org/bots/api#stopPoll) | Use this method to stop a poll which was sent by the bot
 [deleteMessage](https://core.telegram.org/bots/api#deletemessage) | Use this method to delete a message
 [sendSticker](https://core.telegram.org/bots/api#sendsticker) | Use this method to send .webp stickers
 [getStickerSet](https://core.telegram.org/bots/api#getstickerset) | Use this method to get a sticker set
@@ -86,7 +88,7 @@ First you need to include class file and initialize the class:
 ```php
 <?php
 require_once 'BotMethod.php'; //include class file
-$tg = new BotMethod("**YOUR_TOKEN**"); //initialize the class
+$tg = new \MohsenJS\BotMethod("**YOUR_TOKEN**"); //initialize the class
 
 ```
 
@@ -96,7 +98,7 @@ For testing, we send a message and photo
 ```php
 <?php
 require_once 'BotMethod.php'; //include class file
-$tg = new BotMethod("**YOUR_TOKEN**"); //initialize the class
+$tg = new \MohsenJS\BotMethod("**YOUR_TOKEN**"); //initialize the class
 $tg->sendMessage(123456789, 'Hello World!'); //send message
 $tg->sendPhoto(123456789, 'https://www.w3schools.com/html/img_girl.jpg', ':)'); //send photo with caption
 
